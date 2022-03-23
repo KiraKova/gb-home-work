@@ -1,11 +1,9 @@
-def my_f(name, lastname, year, city, email, phone):
-    return f"Имя: {name}," \
-           f" Фамилия: {lastname}, " \
-           f"Год рождения: {year}, " \
-           f"Город: {city}, " \
-           f"Email: {email}," \
-           f"Телефон: {phone}"
-
-
-print(my_f(name=input('Введите имя: '), lastname=input('Введите фамилию: '), year=input('Год рождения: '),
-           city=input('Город проживания: '), email=input('Email: '), phone=input('Телефон: ')))
+my_file = open('hm_test_2.txt', 'r', encoding='utf-8')
+content = my_file.read()
+print(f'Содержимое файла:{content}')
+my_file = open('hm_test_2.txt', 'r', encoding='utf-8')
+content = my_file.readlines()
+print(f'Кол-во строк: {len(content)}')
+my_file = open('hm_test_2.txt', 'r', encoding='utf-8')
+content = my_file.read(len(my_file))
+print()
