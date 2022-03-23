@@ -1,24 +1,11 @@
-# 1. Первый — возведение в степень с помощью оператора **
-def pow1(x, y):
-    return x, y
+rus = {'One' : 'Один', 'Two' : 'Два', 'Three' : 'Три', 'Four' : 'Четыре'}
+new_file = []
+with open('file_4.txt', 'r') as file_obj:
+    #content = file_obj.read().split('\n')
+    for i in file_obj:
+        i = i.split(' ', 1)
+        new_file.append(rus[i[0]] + '  ' + i[1])
+    print(new_file)
 
-
-x = int(input('Введите положительное число: '))
-y = int(input('Введите отрицательное число: '))
-
-print(f'Ответ: {x ** y}')
-
-
-# 2. Второй — более сложная реализация без оператора **, предусматривающая использование цикла
-def pow2(x, y):
-    return x, y
-
-
-x = int(input('Введите положительное число: '))
-y = int(input('Введите отрицательное число: '))
-a = 1
-r = 1 / x
-while a < abs(y):
-    r = r * (1 / x)
-    a += 1
-print(r)
+with open('file_4_new.txt', 'w') as file_obj_2:
+    file_obj_2.writelines(new_file)
