@@ -1,11 +1,16 @@
-def my_f(name, lastname, year, city, email, phone):
-    return f"Имя: {name}," \
-           f" Фамилия: {lastname}, " \
-           f"Год рождения: {year}, " \
-           f"Город: {city}, " \
-           f"Email: {email}," \
-           f"Телефон: {phone}"
+class Road:
+
+    def __init__(self, _length, _width, v, b):
+        self._lenght = _length
+        self._width = _width
+        self.v = v
+        self.b = b
+
+    def mass(self):
+        return (self._lenght * self._width * self.v * self.b) / 1000
 
 
-print(my_f(name=input('Введите имя: '), lastname=input('Введите фамилию: '), year=input('Год рождения: '),
-           city=input('Город проживания: '), email=input('Email: '), phone=input('Телефон: ')))
+r = Road(20, 5000, 25, 5)
+
+print(f'Результат: {int(r.mass())} т.')
+
