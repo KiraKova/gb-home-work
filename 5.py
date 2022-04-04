@@ -1,22 +1,39 @@
-# stop_flag - Прекращение работы програмы
-def calculate_sum(*nums):
-    sum = 0
-    flag = False
-    for num in nums:
-        try:
-            if num:
-                sum += float(num)
-        except ValueError:
-            flag = True
-    return sum, flag
+class Stationery:
+    def __init__(self, title):
+        self.title = title
 
-general_sum = 0
+    def draw(self):
+        return f'Началась отрисовка {self.title}'
 
-while True:
-    numbers_string = input('Введите числа через пробел: ').split(' ')
-    sum, stop_flag = calculate_sum(*numbers_string)
-    general_sum += sum
-    print(f'сумма {general_sum}')
+class Pen(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
 
-    if stop_flag:
-        break
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки ручкой'
+
+
+class Pencil(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки карандашом'
+
+
+class Handle(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Вы взяли {self.title}. Запуск отрисовки маркером'
+
+
+
+pencil = Pencil('Карандаш')
+pen = Pen('Ручка')
+handle = Handle('Маркер')
+
+print(pencil.draw())
+print(handle.draw())
+print(pen.draw())

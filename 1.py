@@ -1,15 +1,21 @@
-def m_dl(a, b):
-    if a != 0 and b != 0:
-        del1 = a / b
-        return del1
-    elif a == 0 and b == 0:
-        print('0 на 0 будет бесконечно малая')
-    elif a == 0:
-        print('0 на число делить нельзя')
-    else:
-        print('На 0 делить нельзя')
+from time import sleep
 
 
-g = m_dl(a=int(input('Введите 1 число, кроме 0: ')), b=int(input('Введите 2 число, кроме 0: ')))
+class TrafficLight:
+    __color = ['Красный', 'Желтый', 'Зеленый', ]
 
-print(g)
+    def running(self):
+        i = 0
+        while i < 3:
+            print(f'Сфветофор горит {TrafficLight.__color[i]}')
+            if i == 0:
+                sleep(7)
+            elif i == 1:
+                sleep(5)
+            elif i == 3:
+                sleep(3)
+            i += 1
+
+
+TrafficLight = TrafficLight()
+TrafficLight.running()
